@@ -1,0 +1,10 @@
+image: ghcr.io/capuanob/nmrpflash-fuzz:latest
+project: nmrpflash
+target: tftp
+tests:
+    - file://fuzzin/tftp
+
+cmds:
+  - cmd: /tftp
+    afl: true
+    max_length: 6200

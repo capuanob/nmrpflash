@@ -1,0 +1,9 @@
+image: ghcr.io/capuanob/nmrpflash-fuzz:latest
+project: nmrpflash
+target: nmrp
+tests:
+    - file://fuzzin/nmrp
+
+cmds:
+  - cmd: /nmrp
+    afl: true

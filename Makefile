@@ -31,10 +31,10 @@ tftptest:
 %.o: %.c nmrpd.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-fuzz_nmrp: tftp.c util.c nmrp.c fuzz.c
+fuzz_nmrp: tftp.c util.c nmrp.c fuzz.c ethsock.c
 	$(AFL) $(CFLAGS) -DNMRPFLASH_FUZZ $^ -o $@
 
-fuzz_tftp: tftp.c util.c nmrp.c fuzz.c
+fuzz_tftp: tftp.c util.c nmrp.c fuzz.c ethsock.c
 	$(AFL) $(CFLAGS) -DNMRPFLASH_FUZZ -DNMRPFLASH_FUZZ_TFTP $^ -o $@
 
 dofuzz_tftp: fuzz_tftp
